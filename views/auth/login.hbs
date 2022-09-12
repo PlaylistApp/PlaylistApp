@@ -1,0 +1,18 @@
+<h1>Please enter your Information to Log In</h1>
+<form action="/auth/login" method="POST">
+    <label for="">Email: </label>
+	<input type="email" name="email">
+
+	<label for="">Password: </label>
+	<input type="password" name="password">
+
+    {{#if message}}
+    <p style="color:red">{{message}}</p>
+    {{/if}}
+
+	<button type="sumbmit">Sign Up</button>
+    
+    <a href="/auth/google">Log in with Google</a>
+
+    
+</form>

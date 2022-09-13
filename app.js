@@ -15,6 +15,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 const app = express();
+const path = require("path");
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require('./config')(app);
@@ -46,6 +47,12 @@ app.use(
 );
 
 // end of session configuration
+
+
+// partials
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+hbs.registerPartials(__dirname + '/views/partials');
 
 // passport config
 

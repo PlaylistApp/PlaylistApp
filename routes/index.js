@@ -39,4 +39,10 @@ router.post('/profile/edit/:userID', (req, res, next) => {
 		.catch((err) => next(err));
 });
 
+
+/// PREVIEW
+router.get("/preview", (req, res, next) => {
+  res.render("video");
+});
+
 module.exports = router;

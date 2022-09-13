@@ -1,0 +1,12 @@
+<h2>Edit your Profile </h2>
+<form action="/profile/edit/{{user._id}}" method="POST">
+    <img src="{{user.googleAvatarUrl}}" alt="userAvatar">
+
+	<label for="">Username: </label>
+	<input type="text" name="username" value="{{user.username}}">
+
+	<label for="">Email: </label>
+	<input type="email" name="email" value="{{user.email}}">
+	
+	<button type="sumbmit">Edit your Profile</button>
+</form>

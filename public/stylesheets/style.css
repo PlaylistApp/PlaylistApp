@@ -5,7 +5,6 @@
   flex-direction: row;
 }
 
-
 nav {
   display: flex;
   flex-direction: row;
@@ -187,7 +186,9 @@ h1 {
   background-color:#DCDBDB;
   width: 320px;
   height: 1000px;
-  padding: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .addNote {
@@ -223,6 +224,35 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.notesHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+}
+
+#addNote {
+  width: 23px;
+  height: 23px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+  width: stretch;
+}
+
+.noteHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+}
 
 .timestamp {
   background-color: #9D71FF;
@@ -232,9 +262,13 @@ h1 {
   padding: 4px;
 }
 
+.noteCredits {
+  width: fit-content;
+  font-size: 12px;
+}
 
-
-
-
-
-
+hr {
+  border: 0.5px solid black;
+  width: 320px;
+  margin-top: 8px;
+}

@@ -1,18 +1,21 @@
-<h1>Please enter your Information to Sign In</h1>
-<form action="/auth/signin" method="POST">
+<div id='signin'>
+	<h1>Please enter your Information to Sign In</h1>
+	<form action='/auth/signin' method='POST' class="form">
 
-	<label for="">E-mail: </label>
-	<input type="email" name="email">
+		<label for=''>E-mail: </label>
+		<input type='email' name='email' />
 
-	<label for="">Password: </label>
-	<input type="password" name="password">
-    
-    {{#if message}}
-    <p style="color:red">{{message}}</p>
-    {{/if}}
+		<label for=''>Password: </label>
+		<input type='password' name='password' />
 
-	<button type="sumbmit">Sign In</button>
+		{{#if message}}
+			<p style='color:red'>{{message}}</p>
+		{{/if}}
+		
+		<button type='sumbmit'>Sign In</button>
+	</form>
 
-	<a href="/auth/google">Sign in with Google </a>
+	<hr>
 
-</form>
+	<a href='/auth/google'><span><img src="https://www.biz-edge.com/images/easyblog_shared/June_2018/6-18-18/gsuite_overhaul_400.jpg" alt=""></span> Sign in with Google </a>
+</div>

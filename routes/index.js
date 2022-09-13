@@ -9,4 +9,10 @@ router.get("/playlists", (req, res, next) => {
   res.render("playlists");
 });
 
+
+/// PREVIEW
+router.get("/preview", (req, res, next) => {
+  res.render("video");
+});
+
 module.exports = router;

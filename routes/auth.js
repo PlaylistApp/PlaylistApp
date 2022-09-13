@@ -81,7 +81,7 @@ router.post('/login', (req, res, next) => {
 			// the password is correct -> the user can be logged in
 			// req.session is an object provided to us by 'express-session'
 			// this is how we log the user in:
-			req.session.user = userFromDB;
+            req.login()
 			console.log(userFromDB);
 			res.redirect('/playlists');
 		} else {

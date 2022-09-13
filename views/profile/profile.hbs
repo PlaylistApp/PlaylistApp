@@ -1,0 +1,15 @@
+<div id="profileView">
+    <h1>Welcome to your Profile {{user.username}}</h1>
+
+    <p>Here you can see and make some changes</p>
+
+    <a href="/profile/edit/{{user._id}}">Edit Profile📝</a>
+
+    <img src="{{user.googleAvatarUrl}}" alt="userAvatar">
+
+    <h2>{{user.username}}</h2>
+
+    <h3>Email: {{user.email}}</h3>
+
+    <h3>Role: {{user.role}}</h3>
+</div>

@@ -1,0 +1,41 @@
+<div>
+    <div>
+        <h2>{{playlist.title}}</h2>
+        <h4>{{playlistUserName}}</h4>
+    </div>
+    
+
+    <div>
+        {{{playlistButtons}}}
+    </div>
+</div>
+<article>
+    {{playlist.description}}
+</article>
+
+{{#if ownerInterface}}
+    {{#each playlist.videos}}
+        <iframe width="200 " height="150" src="{{videoUrl}}"></iframe>
+        <div> 
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <h6>{{videoAuthor}}</h6>
+            <a href="/playlists/delete-video/{{playlistID}}/{{_id}}"> ❌ </a>
+            <a href="/playlists/edit-video/{{playlistID}}/{{_id}}"> 📝</a>
+        </div>
+        
+    {{/each}}
+{{/if}}
+
+{{#if userInterface}}
+    {{#each playlist.videos}}
+        <iframe width="200 " height="150" src="{{videoUrl}}"></iframe>
+        <div> 
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <h6>{{videoAuthor}}</h6>
+        </div>
+    {{/each}}
+{{/if}}
+
+

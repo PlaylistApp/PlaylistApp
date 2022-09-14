@@ -378,7 +378,7 @@ hr {
 	flex-direction: column;
 	align-items: center;
 	font-size: 1rem;
-	width: 35%;
+  width: 270px;
 }
 
 .form input {
@@ -392,7 +392,7 @@ hr {
   height: 30px;
   border: 1px solid #D7D7D7;
   font-size: 16px;
-  width: 270px;
+  width: 255px;
   padding-left: 10px;
 }
 .form textarea {
@@ -436,6 +436,58 @@ hr {
   display: flex;
   flex-direction: column;
 }
+
+#createPlaylist .formContainer div {
+  width: 400px;
+}
+
+#createPlaylist .inputField {
+  width: 400px;
+}
+
+.formContainer {
+  width: 414px;
+}
+
+.formContainer .two {
+  height: 200px;
+}
+
+.formInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer .primaryButton {
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formContainer .secondaryButton {
+  width: 25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.actionButtons {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  width: 414px;
+}
+
+.actionButtons .primaryButton {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+}
+
+.actionButtons .secondaryButton {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
 
 .form div {
   width: 270px;
@@ -506,11 +558,18 @@ hr {
 	vertical-align: middle;
 }
 
+#createPlaylist {
+  align-items: center;
+  margin-top: 30px;
+}
+
+
 
 #createPlaylist p{
   color: black;
   align-self: center;
-  
+  font-size: 1.2em;
+  font-weight: 200em;
 }
 
 #playlistView .playlistHeader{

@@ -1,25 +1,25 @@
 <div id='login'>
 	<div class="formHeader">
-		<h1>Log in</h1>
-		<p>Please enter your credentials</p>
+		<h1>Welcome back</h1>
+		<p>Enter your credentials to access your account</p>
 	</div>
 	
 	<form action='/auth/login' method='POST' class="form">
 		<div>
 			<label class="inputTitle" for=''>Email</label>
-			<input class="inputField" type='email' name='email'/>
+			<input type='email' name='email'/>
 		</div>
 
 		<div>
 			<label class="inputTitle" for=''>Password</label>
-			<input class="inputField" type='password' name='password'/>
+			<input type='password' name='password'/>
 
 			{{#if message}}
 				<p class="error">{{message}}</p>
 			{{/if}}
 		</div>
 
-		<button type='sumbmit'>Log in</button>
+		<button class="primaryButton" type='sumbmit'>Log in</button>
 	</form>
 
     <p class="or">OR</p>

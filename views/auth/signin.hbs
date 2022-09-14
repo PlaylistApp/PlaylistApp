@@ -1,21 +1,34 @@
 <div id='signin'>
-	<h1>Please enter your Information to Sign In</h1>
+	<div class="formHeader">
+		<h1>Let's get started</h1>
+		<p>Inform your credentials to create an account</p>
+	</div>
+	
 	<form action='/auth/signin' method='POST' class="form">
 
-		<label for=''>E-mail: </label>
-		<input type='email' name='email' />
+		<div>
+			<label class="inputTitle"  for=''>E-mail</label>
+			<input class="inputField" type='email' name='email' />
+		</div>
 
-		<label for=''>Password: </label>
-		<input type='password' name='password' />
+		<div>
+			<label class="inputTitle" for=''>Password</label>
+			<input class="inputField" type='password' name='password' />
+		</div>
 
 		{{#if message}}
 			<p style='color:red'>{{message}}</p>
 		{{/if}}
 		
-		<button type='sumbmit'>Sign In</button>
+		<button type='sumbmit'>Create account</button>
 	</form>
 
-	<hr>
+	<p class="or">OR</p>
 
-	<a href='/auth/google'><span><img src="https://www.biz-edge.com/images/easyblog_shared/June_2018/6-18-18/gsuite_overhaul_400.jpg" alt=""></span> Sign in with Google </a>
+
+	<a href='/auth/google' class='googleButton'>
+		<span>
+			<img src="https://www.biz-edge.com/images/easyblog_shared/June_2018/6-18-18/gsuite_overhaul_400.jpg" alt="">Sign in with Google
+		</span>
+	</a>
 </div>

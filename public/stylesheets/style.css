@@ -524,16 +524,29 @@ hr {
   padding: 2px;
 }
 
-.vidSinfoOwner h6{
-  text-align:right;
+/* #videoCard a:active {
+  color: gray
+} */
+#videoCard a {
+  color: black
+}
+#videoCard a:hover {
+  color: gray
+}
+
+.vidSinfoOwner h3{
+  margin-bottom: 5px;
+}
+
+.vidSinfoOwner h4{
   padding-right: 60px;
   margin: 5px 0px 5px;
 }
 
+
 .vidSinfoOwner p{
   height: 95px;
-  margin: 3px;
+  margin: 3px 0 10px;
   text-align: justify;
-
   overflow: hidden;
 }

@@ -24,8 +24,8 @@
 
 					<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfo vidSinfoOwner'>
 						<h3>{{title}}</h3>
+                        <h4>by {{videoAuthor}}</h4>
 						<p>{{description}}</p>
-						<h6>{{videoAuthor}}</h6>
 					</a>
 
 					<div class='vidSbtn'>
@@ -38,14 +38,16 @@
 
 		{{#if userInterface}}
 			{{#each playlist.videos}}
+                <div id='videoCard' class='vidScard flexRow'>
+					<a href='/playlists/{{playlistID}}/{{_id}}'>
+						<iframe src='{{videoUrl}}' class='videothumb'></iframe>
+					</a>
 
-				<div id='videoCard' class='vidScard flexRow'>
-					<iframe src='{{videoUrl}}' class='videothumb'></iframe>
-					<div class='vidSinfo vidSinfoUser'>
+					<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfo vidSinfoUser'>
 						<h3>{{title}}</h3>
 						<p>{{description}}</p>
-						<h6>{{videoAuthor}}</h6>
-					</div>
+						<h4>by {{videoAuthor}}</h4>
+					</a>
 				</div>
 			{{/each}}
 		{{/if}}

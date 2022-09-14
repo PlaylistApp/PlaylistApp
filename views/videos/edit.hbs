@@ -1,16 +1,18 @@
-<h2>Edit the Video </h2>
-<form action="/playlists/edit-video/{{video.playlistID._id}}/{{video._id}}" method="POST">
-	<label for="">Title: </label>
-	<input type="text" name="title" value="{{video.title}}">
+<div id="editVideo">
+	<h2>Edit the Video </h2>
+	<form action="/playlists/edit-video/{{video.playlistID._id}}/{{video._id}}" method="POST" class="form">
+		<label for="">Title: </label>
+		<input type="text" name="title" value="{{video.title}}">
 
-	<label for="">Video URL: </label>
-	<input type="text" name="videoUrlnotEmbed" value="{{video.videoUrl}}">
+		<label for="">Video URL: </label>
+		<input type="text" name="videoUrlnotEmbed" value="{{video.videoUrl}}">
 
-    <label for="">Name of the Author: </label>
-	<input type="text" name="videoAuthor" value="{{video.videoAuthor}}">
+		<label for="">Name of the Author: </label>
+		<input type="text" name="videoAuthor" value="{{video.videoAuthor}}">
 
-	<label for="">Description: </label>
-	<input type="text" name="description" value="{{video.description}}">
+		<label for="">Description: </label>
+		<input type="text" name="description" value="{{video.description}}">
 
-	<button type="sumbmit">Edit the Video</button>
-</form>
+		<button type="sumbmit">Edit the Video</button>
+	</form>
+</div>

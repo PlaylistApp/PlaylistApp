@@ -372,7 +372,7 @@ hr {
 	font-size: 0.8rem;
 }
 
-#signin, #login {
+#signin, #login, #createPlaylist, #editPlaylist, #addVideo, #editVideo{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -413,4 +413,10 @@ hr {
 #signin a img, #login a img {
 	width: 20px;
 	vertical-align: middle;
+}
+
+#createPlaylist p{
+  color: black;
+  align-self: center;
+  
 }

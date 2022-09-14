@@ -1,13 +1,15 @@
-<h2>Create a new Playlist </h2>
-<form action="/playlists/create-playlist" method="POST">
-	<label for="">Title: </label>
-	<input type="text" name="title">
+<div id="createPlaylist">
+	<h2>Create a new Playlist </h2>
+	<form action="/playlists/create-playlist" method="POST" class="form">
+		<label for="">Title: </label>
+		<input type="text" name="title">
 
-	<label for="">Description: </label>
-	<input type="text" name="description">
+		<label for="">Description: </label>
+		<input type="text" name="description">
 
-	{{!-- //IMAGE --}}
-	
-	<button type="sumbmit">Create the Playlist</button>
-	<p>Create the Playlist to start add videos to it</p>
-</form>
+		{{!-- //IMAGE --}}
+		
+		<button type="sumbmit">Create the Playlist</button>
+		<p>Create the Playlist to add videos to it!</p>
+	</form>
+</div>

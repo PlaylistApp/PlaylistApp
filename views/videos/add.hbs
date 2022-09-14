@@ -1,16 +1,18 @@
-<h2>Add a new Video </h2>
-<form action="/playlists/add-video/{{playlistID}}" method="POST">
-	<label for="">Title: </label>
-	<input type="text" name="title">
+<div id="addVideo">
+	<h2>Add a new Video </h2>
+	<form action="/playlists/add-video/{{playlistID}}" method="POST" class="form">
+		<label for="">Title: </label>
+		<input type="text" name="title">
 
-	<label for="">Video URL: </label>
-	<input type="text" name="videoUrlnotEmbed">
+		<label for="">Video URL: </label>
+		<input type="text" name="videoUrlnotEmbed">
 
-    <label for="">Name of the Author: </label>
-	<input type="text" name="videoAuthor">
+		<label for="">Name of the Author: </label>
+		<input type="text" name="videoAuthor">
 
-	<label for="">Description: </label>
-	<input type="text" name="description">
+		<label for="">Description: </label>
+		<input type="text" name="description">
 
-	<button type="sumbmit">Add this Video to your Playlist</button>
-</form>
+		<button type="sumbmit">Add this Video</button>
+	</form>
+</div>

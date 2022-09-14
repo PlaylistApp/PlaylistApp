@@ -1,41 +1,54 @@
-<div>
-    <div>
-        <h2>{{playlist.title}}</h2>
-        <h4>{{playlistUserName}}</h4>
-    </div>
-    
+<div id='playlistView'>
+	<div class='playlistHeader'>
+		<div class='playlistInfo'>
+			<h2>{{playlist.title}}</h2>
+			<h4>{{playlistUserName}}</h4>
+		</div>
 
-    <div>
-        {{{playlistButtons}}}
-    </div>
+		<div class='playlistBtn'>
+			{{{playlistButtons}}}
+		</div>
+	</div>
+	<div class='playlistContent'>
+		<article>
+			{{playlist.description}}
+		</article>
+		<h2>Videos</h2>
+
+		{{#if ownerInterface}}
+			{{#each playlist.videos}}
+				<div id='videoCard' class='vidScard flexRow'>
+					<a href='/playlists/{{playlistID}}/{{_id}}'>
+						<iframe src='{{videoUrl}}' class='videothumb'></iframe>
+					</a>
+
+					<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfo vidSinfoOwner'>
+						<h3>{{title}}</h3>
+						<p>{{description}}</p>
+						<h6>{{videoAuthor}}</h6>
+					</a>
+
+					<div class='vidSbtn'>
+						<a href='/playlists/delete-video/{{playlistID}}/{{_id}}'> ❌ </a>
+						<a href='/playlists/edit-video/{{playlistID}}/{{_id}}'> 📝</a>
+					</div>
+				</div>
+			{{/each}}
+		{{/if}}
+
+		{{#if userInterface}}
+			{{#each playlist.videos}}
+
+				<div id='videoCard' class='vidScard flexRow'>
+					<iframe src='{{videoUrl}}' class='videothumb'></iframe>
+					<div class='vidSinfo vidSinfoUser'>
+						<h3>{{title}}</h3>
+						<p>{{description}}</p>
+						<h6>{{videoAuthor}}</h6>
+					</div>
+				</div>
+			{{/each}}
+		{{/if}}
+	</div>
+
 </div>
-<article>
-    {{playlist.description}}
-</article>
-
-{{#if ownerInterface}}
-    {{#each playlist.videos}}
-        <iframe width="200 " height="150" src="{{videoUrl}}"></iframe>
-        <div> 
-            <h3>{{title}}</h3>
-            <p>{{description}}</p>
-            <h6>{{videoAuthor}}</h6>
-            <a href="/playlists/delete-video/{{playlistID}}/{{_id}}"> ❌ </a>
-            <a href="/playlists/edit-video/{{playlistID}}/{{_id}}"> 📝</a>
-        </div>
-        
-    {{/each}}
-{{/if}}
-
-{{#if userInterface}}
-    {{#each playlist.videos}}
-        <iframe width="200 " height="150" src="{{videoUrl}}"></iframe>
-        <div> 
-            <h3>{{title}}</h3>
-            <p>{{description}}</p>
-            <h6>{{videoAuthor}}</h6>
-        </div>
-    {{/each}}
-{{/if}}
-
-

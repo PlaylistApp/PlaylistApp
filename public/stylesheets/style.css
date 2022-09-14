@@ -214,6 +214,35 @@ h1 {
   width:fit-content;
 }  
 
+.vidSinfoOwner {
+  width: 60%;
+}
+
+.vidSinfoUser {
+  width: 80%;
+}
+
+.vidSbtn {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  width: 6%;
+}
+
+.vidSbtn a{
+  border: 1px outset;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: 1px;
+}
+
 .duration {
   margin-top: 0px;
 }
@@ -438,24 +467,26 @@ hr {
 }
 
 #playlistView .playlistInfo{
-  margin: 20px;
+  margin: 5px 20px;
   width: 70%;
 }
 
 #playlistView .playlistInfo h2{
   font-size: 2rem;
   padding-left: 40px;
+  margin-bottom: 5px;
 }
 
 #playlistView .playlistInfo h4{
   text-align:right;
   padding-right: 60px;
+  margin-bottom: 5px;
 }
 
 #playlistView .playlistBtn{
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 5px 20px;
 
 }
 
@@ -469,4 +500,40 @@ hr {
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
   margin: 1px;
+}
+
+#playlistView .playlistContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+#playlistView .playlistContent article{
+  margin: 20px 40px;
+  width:75%;
+  text-align: justify;
+}
+
+#videoCard {
+  width: 75%;
+  border: 1px outset;
+  margin: 5px;
+  padding: 2px;
+}
+
+.vidSinfoOwner h6{
+  text-align:right;
+  padding-right: 60px;
+  margin: 5px 0px 5px;
+}
+
+.vidSinfoOwner p{
+  height: 95px;
+  margin: 3px;
+  text-align: justify;
+
+  overflow: hidden;
 }

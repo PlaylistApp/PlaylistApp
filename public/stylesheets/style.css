@@ -151,8 +151,8 @@ h1 {
 /* video page */
 .videoimg {
   background-color: #DCDBDB;
-  width: 790px;
-  height: 446px;
+  width: 760px;
+  height: 430px;
 }
 
 .credits {
@@ -186,7 +186,7 @@ h1 {
   display: flex;
   flex-direction: column;
   background-color:#DCDBDB;
-  width: 320px;
+  width: 340px;
   height: 1000px;
   padding-top: 15px;
   padding-right: 15px;

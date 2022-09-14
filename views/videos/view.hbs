@@ -1,0 +1,41 @@
+
+<div class="columns">
+
+    <div class="videoinfo">
+        <div class="videoimg">
+            <iframe src='{{video.videoUrl}}' class='videoimg'></iframe>
+        </div>
+        <p class="credits">Playlist: {{video.playlistID.title}} | Created by: {{video.playlistCreator.username}} </p>
+        <h1>{{video.title}}</h1>
+        <p>Author: {{video.videoAuthor}}</p>
+        <p class="videodescription">{{video.description}}</p>
+
+        <div class="othervideos">
+            <h2>More from the same playlist</h2>
+            <p>by {{video.playlistCreator.username}}</p>
+
+            {{#each video.videos}}
+            {{> videoPlaylistCard}}
+            {{/each}}
+        </div>
+    </div>
+
+    <section class="notes">
+        <div class="notesHeader">
+            <h2> Notes</h2>
+            <img src="/images/add_note.png" id="addNote">
+        </div>
+       
+        <div class="tabs">
+            <button type="btFilter" class="allNotes">All notes</button>
+            <button type="btFilter" class="myNotes">Mine</button>
+            <button type="btFilter" class="creatorsNotes">Creator's</button>
+        </div>
+         <hr>
+        {{> note}}
+    </section>
+</div>
+
+<script>
+    
+</script>

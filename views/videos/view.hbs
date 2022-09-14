@@ -14,8 +14,18 @@
             <h2>More from the same playlist</h2>
             <p>by {{video.playlistCreator.username}}</p>
 
-            {{#each video.videos}}
-            {{> videoPlaylistCard}}
+            {{#each video.playlistID.videos}}
+                <div class="vidScard">
+                    <div class="videothumb" {{!-- id="ytplayer" --}}>
+                        <iframe src='{{this.videoUrl}}' class='videothumb iframeVideo'></iframe>
+                    </div>
+                    <div class="vidSinfo ">
+                        <h2 class="vidSinfoH2">{{this.title}}</h2>
+                        <p class="vidSinfoP">{{this.description}}</p>
+                        {{!-- <p class="duration">15:23</p> --}}
+                        <p>by {{this.videoAuthor}}</p>
+                    </div>
+                </div>
             {{/each}}
         </div>
     </div>
@@ -37,5 +47,23 @@
 </div>
 
 <script>
-    
+   
+
+    {{!-- var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var player;
+        function onYouTubePlayerAPIReady(videoID) {
+            player = new YT.Player('ytplayer', {
+            height: '360',
+            width: '640',
+            videoId: 'M7lc1UVf-VE'
+            });
+        }
+        // 2. get player.playerInfo.currentTime
+        window.onclick = () => {
+        console.log(player);
+  alert(player.playerInfo.duration);
+} --}}
 </script>

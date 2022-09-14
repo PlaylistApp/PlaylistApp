@@ -619,3 +619,15 @@ hr {
   color: #d1515c !important;
   font-size: 0.8em !important;
 }
+
+.vidSinfoP{
+  line-height: 1.5em;
+  height: 3em;      
+  overflow: hidden;  
+}
+
+.vidSinfoH2{
+  margin-bottom: 10px;
+  line-height: 30px;
+}
+

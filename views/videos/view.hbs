@@ -5,7 +5,7 @@
         <div class="videoimg">
             <iframe src='{{video.videoUrl}}' class='videoimg'></iframe>
         </div>
-        <p class="credits">Playlist: {{video.playlistID.title}} | Created by: {{video.playlistCreator.username}} </p>
+        <p class="credits">Playlist: <a href="/playlists/{{video.playlistID.id}}">{{video.playlistID.title}}</a> | Created by: {{video.playlistCreator.username}} </p>
         <h1>{{video.title}}</h1>
         <p>Author: {{video.videoAuthor}}</p>
         <p class="videodescription">{{video.description}}</p>

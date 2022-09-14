@@ -153,7 +153,8 @@ router.post('/edit-video/:playlistID/:videoID', (req, res, next) => {
 
 router.get("/:playlistID/:videoID", (req, res, next) => {
 	Video.findById(req.params.videoID)
-	.populate('playlistID').populate('playlistCreator').populate({})
+	.populate('playlistID').populate('playlistCreator')
+	// .populate({})
 		.then((video) => {
 			console.log(video)
 			res.render("videos/view", { video });

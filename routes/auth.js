@@ -72,7 +72,7 @@ router.post('/login', (req, res, next) => {
 	User.findOne({ username: username }).then((userFromDB) => {
 		if (userFromDB === null) {
 			// username is not correct -> show the login form again
-			res.render('auth/login', { message: 'Wrong credentials' });
+			res.render('auth/login', { message: 'Oops! Wrong credentials' });
 			return;
 		}
 		// username is correct
@@ -85,7 +85,7 @@ router.post('/login', (req, res, next) => {
 			console.log(userFromDB);
 			res.redirect('/playlists');
 		} else {
-			res.render('auth/login', { message: 'Wrong credentials' });
+			res.render('auth/login', { message: 'Oops! Wrong credentials' });
 			return;
 		}
 	});

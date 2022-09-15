@@ -807,3 +807,40 @@ hr {
   align-content: left;
   margin-right: 15px;
 }
+
+.plInfoCard {
+ width: 60%;
+ margin-left: 25px;
+ color: black;
+}
+
+.plInfoCard:hover {
+  color: #9d71ff;
+}
+
+#playlistsCard {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: center;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+.playlistsContentPage {
+  margin-top: 30px;
+}
+
+.videoPlaceholder {
+  background-color: rgb(219, 219, 219);
+  height: 180px;
+  width: 270px;
+  align-self: center;
+}
+
+.playlistsContentPage .formHeader {
+  margin-bottom: 50px;
+}

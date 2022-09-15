@@ -152,6 +152,7 @@ h1 {
   background-color: #DCDBDB;
   width: 760px;
   height: 430px;
+  border: none;
 }
 
 .credits {
@@ -431,6 +432,9 @@ hr {
 	font-size: 0.8rem;
 }
 
+#addVideo {
+  align-items: center;
+}
 
 #signin, #login, #createPlaylist, #editPlaylist, #addVideo, #editVideo{
   display: flex;
@@ -443,6 +447,10 @@ hr {
 
 #createPlaylist .inputField, #editPlaylist .inputField {
   width: 400px;
+}
+
+#addVideo .formHeader {
+  margin-top: 30px;
 }
 
 .formContainer {

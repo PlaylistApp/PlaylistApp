@@ -1,18 +1,35 @@
 <div id="addVideo">
-	<h2>Add a new Video </h2>
-	<form action="/playlists/add-video/{{playlistID}}" method="POST" class="form">
-		<label for="">Title: </label>
-		<input type="text" name="title">
+	<div class="formHeader">
+		<h1>Add video</h1>
+		<p>All fields are mandatory</p>
+	</div>
 
-		<label for="">Video URL: </label>
-		<input type="text" name="videoUrlnotEmbed">
+	<form class="formContainer" a action="/playlists/add-video/{{playlistID}}" method="POST">
+		<div class="formInfo">
+			<div>
+				<label class="inputTitle" for="">Title</label>
+				<input class="inputField"type="text" name="title">
+			</div>
 
-		<label for="">Name of the Author: </label>
-		<input type="text" name="videoAuthor">
+			<div>
+				<label class="inputTitle" for="">Video URL</label>
+				<input class="inputField"type="text" name="videoUrlnotEmbed">
+			</div>
 
-		<label for="">Description: </label>
-		<textarea type="text" name="description" rows="4" ></textarea>
+			<div>
+				<label class="inputTitle" for="">Name of the Author</label>
+				<input class="inputField"type="text" name="videoAuthor">
+			</div>
 
-		<button type="sumbmit">Add this Video</button>
+			<div>
+				<label class="inputTitle" for="">Description</label>
+				<textarea class="inputField two" type="text" name="description" rows="4" ></textarea>
+			</div>
+
+		</div>
+		<div class="actionButtons">
+			<button class="secondaryButton" type="sumbmit">Cancel</button>
+			<button class="primaryButton" type="sumbmit">Save</button>
+		</div>	
 	</form>
 </div>

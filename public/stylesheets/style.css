@@ -80,6 +80,21 @@ body {
 	margin: 0px;
 }
 
+.playlistsPageContent {
+  align-items: center;
+  margin-top: 30px;
+}
+
+.playlistsPageContent p {
+  color: #ababab;
+  font-size: 20px;
+}
+
+.playlistsPg {
+  align-items: center;
+  align-content: center;
+}
+
 .banner {
   background-color: #F4F4F4;
   height: 550px;
@@ -93,6 +108,7 @@ body {
 .head {
   font-size: 16px;
 }
+
 .cta {
   display: block;
   font-size: 45px;

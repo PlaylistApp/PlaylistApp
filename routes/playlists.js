@@ -144,6 +144,10 @@ router.get('/edit-video/:playlistID/:videoID', (req, res, next) => {
 });
 
 router.post('/edit-video/:playlistID/:videoID', (req, res, next) => {
+	let user = null
+	if (req.user.id) {
+		user = req.user.id 
+	} 
 	const { title, videoUrlnotEmbed, videoAuthor, description } = req.body;
 	let videoUrl = videoUrlnotEmbed;
 	if (videoUrlnotEmbed.includes('v=')) {
@@ -163,6 +167,10 @@ router.post('/edit-video/:playlistID/:videoID', (req, res, next) => {
 });
 
 router.get("/:playlistID/:videoID", (req, res, next) => {
+	let user = null
+	if (req.user.id) {
+		user = req.user.id 
+	}
 	Video.findById(req.params.videoID)
 	// .populate('playlistID')
 	.populate(({
@@ -175,7 +183,14 @@ router.get("/:playlistID/:videoID", (req, res, next) => {
 	.populate('playlistCreator')
 		.then((video) => {
 			// console.log(video.playlistID.videos)
-			res.render("videos/view", { video });
+			User.findById(user).populate(({
+				path: 'videoNotes',
+				
+			  })).then((user) =>{
+				// console.log(video)
+				res.render("videos/view", { video,user });
+			  })
+			
 		})
 		.catch((err) => next(err));
   });

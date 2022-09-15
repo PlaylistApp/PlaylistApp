@@ -646,3 +646,8 @@ hr {
   color: gray
 }
 
+.formNote{
+  display: flex;
+  flex-direction: column;
+}
+

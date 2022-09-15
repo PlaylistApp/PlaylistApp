@@ -227,7 +227,7 @@ h1 {
   height: 100px;
   justify-content: space-between;
   align-items: center;
-  width: 6%;
+  width: 100%
 }
 
 .vidSbtn a{
@@ -437,11 +437,11 @@ hr {
   flex-direction: column;
 }
 
-#createPlaylist .formContainer div {
+#createPlaylist .formContainer div, #editPlaylist .formContainer div {
   width: 400px;
 }
 
-#createPlaylist .inputField {
+#createPlaylist .inputField, #editPlaylist .inputField {
   width: 400px;
 }
 
@@ -558,7 +558,7 @@ hr {
 	vertical-align: middle;
 }
 
-#createPlaylist {
+#createPlaylist, #editPlaylist {
   align-items: center;
   margin-top: 30px;
 }
@@ -578,7 +578,7 @@ hr {
   border: 1px outset;
 }
 
-#playlistView .playlistInfo{
+#playlistView .playlistInfo {
   margin: 5px 20px;
   width: 70%;
 }
@@ -623,17 +623,16 @@ hr {
   margin: 0;
 }
 
-#playlistView .playlistContent article{
+#playlistView .playlistContent article {
   margin: 20px 40px;
   width:75%;
   text-align: justify;
 }
 
 #videoCard {
-  width: 75%;
-  border: 1px outset;
+  width: 95%
   margin: 5px;
-  padding: 2px;
+  padding: 10px;
 }
 
 /* #videoCard a:active {
@@ -677,4 +676,49 @@ hr {
 .error {
   color: #d1515c !important;
   font-size: 0.8em !important;
+}
+
+/* view my Playlist */
+
+.plView {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-top: 50px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.playlistDetails {
+  text-align: left;
+  width: 40%;
+  margin-left: 15px;
+  margin-right: 15px;
+  line-height: 1.6;
+}
+
+.playlistDetails h2, h4 {
+  line-height: 1.4;
+}
+
+.playlistDetails h2 {
+  margin-bottom: 10px;
+}
+
+.plSideHeader p {
+  font-size: 1em;
+  color: #00b988;
+  margin: 0px
+}
+
+.plSideHeader h4 {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-weight: 510;
+}
+
+.videosPlaceholder {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
 }

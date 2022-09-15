@@ -1,12 +1,25 @@
 <div id="editPlaylist">
-	<h2>Edit the Playlist </h2>
-	<form action="/playlists/edit/{{playlist._id}}" method="POST" class="form">
-		<label for="">Title: </label>
-		<input type="text" name="title" value="{{playlist.title}}">
-
-		<label for="">Description: </label>
-		<textarea type="text" name="description" rows="4">{{playlist.description}}</textarea>
+	<div class="formHeader">
+		<h1>Edit the Playlist </h1>
+		<p>All fields are mandatory</p>
+	</div>
 		
-		<button type="sumbmit">Edit the Playlist</button>
+	<form class="formContainer" action="/playlists/edit/{{playlist._id}}" method="POST" class="form">
+		<div class="formInfo">
+			<div>
+				<label class="inputTitle" for="">Title</label>
+				<input class="inputField" type="text" name="title" value="{{playlist.title}}">
+			</div>
+
+			<div>
+				<label class="inputTitle one" for="">Description</label>
+				<textarea class="inputField two" type="text" name="description" rows="4">{{playlist.description}}</textarea>
+			</div>
+		</div>
+
+		<div class="actionButtons">
+			<button class="secondaryButton" type="sumbmit">Cancel</button>
+			<button class="primaryButton" type="sumbmit">Save changes</button>
+		</div>	
 	</form>
 </div>

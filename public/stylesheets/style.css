@@ -623,11 +623,26 @@ hr {
 .vidSinfoP{
   line-height: 1.5em;
   height: 3em;      
-  overflow: hidden;  
+  overflow: hidden; 
 }
 
 .vidSinfoH2{
   margin-bottom: 10px;
   line-height: 30px;
+}
+
+.playlistsSinfoP{
+  line-height: 1.5em;
+  height: 3em;      
+  overflow: hidden; 
+  width: 80%;
+
+}
+
+#playlistsCard a {
+  color: black
+}
+#playlistsCard a:hover {
+  color: gray
 }
 

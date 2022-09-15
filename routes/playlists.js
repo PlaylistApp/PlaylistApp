@@ -4,6 +4,17 @@ const User = require('../models/User');
 const Video = require('../models/Video');
 const Playlist = require('../models/Playlists');
 
+
+router.get('/', (req, res, next) => {
+	Playlist.find()
+	.populate('playlistCreator').populate('videos')
+	.then((playlists) => {
+		res.render('playlists', {playlists});
+	})
+	.catch((err) => next(err));
+	
+});
+
 router.get('/create-playlist', (req, res, next) => {
 	res.render('playlists/create');
 });

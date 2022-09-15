@@ -7,10 +7,6 @@ router.get('/', (req, res, next) => {
 	res.render('index');
 });
 
-router.get('/playlists', (req, res, next) => {
-	res.render('playlists');
-});
-
 router.get('/profile', (req, res, next) => {
 	let user = req.user.id;
 	User.findById(user)

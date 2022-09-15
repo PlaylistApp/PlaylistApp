@@ -5,7 +5,31 @@ document.addEventListener(
   },
   false
 );
+var videoUrlnotReady = document.querySelector('#ytplayer').getAttribute("data-videoUrl")
+  var videoUrl = videoUrl.slice(videoUrl.indexOf('embed/')+6)
 
+
+var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      // height: '360',
+      // width: '640',
+      videoId: videoUrl
+    });
+  }
+// 2. get player.playerInfo.currentTime
+// window.onclick = () => {
+//   console.log(player);
+//   alert(player.playerInfo.currentTime);
+// }
+
+
+
+// console.log(videoUrl.slice(videoUrl.indexOf('embed/')+6));
 document.querySelector('#addNote').addEventListener('click', function () {
   const notesDiv = document.querySelector('#notes')
   const newNote = document.createElement('form')
@@ -24,15 +48,3 @@ document.querySelector('#addNote').addEventListener('click', function () {
   notesDiv.appendChild(newNote)
 });
 
-{/* <div class="noteCard">
-    
-    <div class="noteHeader">
-        <p class="timestamp">01:45</p>
-        <div class="noteCredits">
-            <p>06/18/2022 | by Name</p>
-        </div>
-
-    </div>
-    
-    <p class="noteText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-</div> */}

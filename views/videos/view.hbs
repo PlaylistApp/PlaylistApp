@@ -2,8 +2,8 @@
 <div class="columns">
 
     <div class="videoinfo">
-        <div class="videoimg">
-            <iframe src='{{video.videoUrl}}' class='videoimg'></iframe>
+        <div class="videoimg" id="ytplayer" data-videoUrl="{{video.videoUrl}}">
+            {{!-- <iframe src='{{video.videoUrl}}' class='videoimg'></iframe> --}}
         </div>
         <p class="credits">Playlist: <a href="/playlists/{{video.playlistID.id}}">{{video.playlistID.title}}</a> | Created by: {{video.playlistCreator.username}} </p>
         <h1>{{video.title}}</h1>

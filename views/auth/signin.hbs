@@ -14,13 +14,12 @@
 		<div>
 			<label class="inputTitle" for=''>Password</label>
 			<input class="inputField" type='password' name='password' />
+			{{#if message}}
+				<p class="error">{{message}}</p>
+			{{/if}}
 		</div>
-
-		{{#if message}}
-			<p style='color:red'>{{message}}</p>
-		{{/if}}
 		
-		<button type='sumbmit'>Create account</button>
+		<button class="primaryButton" type='sumbmit'>Create account</button>
 	</form>
 
 	<p class="or">OR</p>

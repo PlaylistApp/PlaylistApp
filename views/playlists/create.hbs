@@ -1,15 +1,28 @@
 <div id="createPlaylist">
-	<h2>Create a new Playlist </h2>
-	<form action="/playlists/create-playlist" method="POST" class="form">
-		<label for="">Title: </label>
-		<input type="text" name="title">
+	<div class="formHeader">
+		<h1>New Playlist </h1>
+		<p>Inform the playlist details before adding the videos</p>
+	</div>
+	
+	<form class="formContainer" action="/playlists/create-playlist" method="POST">
+		<div class="formInfo">
+			<div>
+				<label class="inputTitle" for="">Title</label>
+				<input class="inputField" type="text" name="title">
+			</div>	
 
-		<label for="">Description: </label>
-		<textarea type="text" name="description" rows="4" ></textarea>
+			<div>
+				<label class="inputTitle one" for="">Description</label>
+				<textarea class="inputField two" type="text" name="description" rows="4" ></textarea>
+			</div>
+		</div>
+		
+		
 
 		{{!-- //IMAGE --}}
-		
-		<button type="sumbmit">Create the Playlist</button>
-		<p>Create the Playlist to add videos to it!</p>
+		<div class="actionButtons">
+			<button class="secondaryButton" type="sumbmit">Cancel</button>
+			<button class="primaryButton" type="sumbmit">Create Playlist</button>
+		</div>	
 	</form>
 </div>

@@ -1,0 +1,82 @@
+
+.formHeader {
+    align-self: center;
+    text-align: center;
+}
+
+.formHeader p {
+    font-size: 1.2em;
+    font-weight: 200;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainer div {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTitle {
+    color: #5C5C5C;
+    font-size: 12px;
+    font-weight: 300;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.inputField {
+    margin-bottom: 10px;
+    line-height: 25px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    height: 30px;
+    border: 1px solid #D7D7D7;
+    font-size: 14px;
+    padding-left: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.primaryButton {
+    transition-duration: 0.4s;
+    padding: 10px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #3c70e2;
+    color: white;
+}
+
+.primaryButton:hover {
+    background-color: #294b94;
+    color: white;
+}
+
+.secondaryButton {
+    transition-duration: 0.4s;
+    padding: 10px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid #3c70e2;
+    color: #3c70e2;
+    background: none;
+}
+
+.secondaryButton:hover {
+    border: 1px solid #294b94;
+    color: #294b94;
+    background: none;
+}    
+

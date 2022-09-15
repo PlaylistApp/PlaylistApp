@@ -635,9 +635,10 @@ hr {
   padding: 10px;
 }
 
-/* #videoCard a:active {
+#videoCard a:active {
   color: gray
-} */
+}
+
 #videoCard a {
   color: black
 }
@@ -720,5 +721,49 @@ hr {
 .videosPlaceholder {
   display: flex;
   flex-direction: column;
-  width: 55%;
+  width: 60%;
+}
+
+#vidCard {
+  display: flex;
+  flex-direction: row;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.vidThumb {
+  margin: 15px;
+}
+
+.vidCardTxt {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.vidCardHeader {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  text-align: left;
+  padding: 0px;
+  width: 100%;
+}
+
+.vidCardBtn {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-end;
+}  
+
+.vidDescription {
+  text-align: left;
+  align-content: left;
+  margin-right: 15px;
 }

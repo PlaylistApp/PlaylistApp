@@ -4,30 +4,54 @@
 			<p>PLAYLIST</p>
 			<h2>{{playlist.title}}</h2>
 			<h4>Created by {{playlistUserName}}</h4>
+			<div class='playlistBtn'>
+           		{{{playlistButtons}}}
+       		</div>
 		</div>
 			
 		<div class="plSideDescription">
 			{{playlist.description}}	
 		</div>
+
 	</div>
 
 	<div class="videosPlaceholder">
 		{{#if ownerInterface}}
 			{{#each playlist.videos}}
-				<div class="videoCard">
+				<div id="vidCard">
 					<a href='/playlists/{{playlistID}}/{{_id}}'>
-						<iframe src='{{videoUrl}}' class='videothumb'></iframe>
-					</a>
-					<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfo vidSinfoOwner'>
-						<h3>{{title}}</h3>
-                        <h4>by {{videoAuthor}}</h4>
-						<div class='vidSbtn'>
-							<a href='/playlists/delete-video/{{playlistID}}/{{_id}}'> ❌ </a>
-							<a href='/playlists/edit-video/{{playlistID}}/{{_id}}'> 📝</a>
-						</div>
+							<iframe src='{{videoUrl}}' class='vidThumb'></iframe>
+					</a>					
+
+					<div class="vidCardTxt">
+						<div class="content">
+							<div class="vidCardHeader">
+								<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfoOwner'>
+									<h3>{{title}}</h3>
+									<h4>by {{videoAuthor}}</h4>
+								</a>	
+							</div>	
+							<div class="videoCardBtn">
+								<a class="deleteBt" href='/playlists/delete-video/{{playlistID}}/{{_id}}'> ❌ </a>
+								<a class="editBt" href='/playlists/edit-video/{{playlistID}}/{{_id}}'> 📝</a>
+							</div>	
+						</div>	
+								
+							
 						
-						<p>{{description}}</p>
-					</a>
+						<p class="vidDescription">{{description}}</p>
+								
+					</div>
+
+					
+
+						
+
+					</div>
+				</div> 
+					
+						
+						
 				</div>
 	</div>			
 </div>
@@ -37,7 +61,7 @@
 					
 
 			<!--		
-				</div>
+			
 			{{/each}}
 		{{/if}}
 
@@ -57,9 +81,8 @@
 			{{/each}}
 		{{/if}}	
 	</div>		
-</div> -->
+</div> 
 
-<!-- 
 	<div id='videoCard' class='vidScard flexRow'>
 	<div class='playlistHeader1'>
 		<div class='playlistInfo1'>
@@ -70,14 +93,6 @@
 			{{{playlistButtons}}}
 		</div>
 	</div>
-	<div class='playlistContent'> 
+	<div class='playlistContent'> -->
 		
-		
-		<h2>Videos</h2>  -->
-
-<!-- <div class="plSideVideos">
 	
-</div>		
-	</div>
-
-</div> -->

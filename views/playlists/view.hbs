@@ -29,70 +29,22 @@
 								<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfoOwner'>
 									<h3>{{title}}</h3>
 									<h4>by {{videoAuthor}}</h4>
+									<div class="videoCardBtn">
+										<a class="deleteBt" href='/playlists/delete-video/{{playlistID}}/{{_id}}'> ❌ </a>
+									<a class="editBt" href='/playlists/edit-video/{{playlistID}}/{{_id}}'> 📝</a>
+							</div>	
 								</a>	
 							</div>	
-							<div class="videoCardBtn">
-								<a class="deleteBt" href='/playlists/delete-video/{{playlistID}}/{{_id}}'> ❌ </a>
-								<a class="editBt" href='/playlists/edit-video/{{playlistID}}/{{_id}}'> 📝</a>
-							</div>	
-						</div>	
-								
 							
-						
-						<p class="vidDescription">{{description}}</p>
-								
-					</div>
-
-					
-
-						
-
+						</div>	
 					</div>
 				</div> 
 					
+			{{/each}}
+		{{/if}}			
 						
-						
-				</div>
+	
 	</div>			
 </div>
 				
-					
-
-					
-
-			<!--		
-			
-			{{/each}}
-		{{/if}}
-
-		{{#if userInterface}}
-			{{#each playlist.videos}}
-                <div id='videoCard' class='vidScard flexRow'>
-					<a href='/playlists/{{playlistID}}/{{_id}}'>
-						<iframe src='{{videoUrl}}' class='videothumb'></iframe>
-					</a>
-
-					<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfo vidSinfoUser'>
-						<h3>{{title}}</h3>
-						<p>{{description}}</p>
-						<h4>by {{videoAuthor}}</h4>
-					</a>
-				</div>
-			{{/each}}
-		{{/if}}	
-	</div>		
-</div> 
-
-	<div id='videoCard' class='vidScard flexRow'>
-	<div class='playlistHeader1'>
-		<div class='playlistInfo1'>
-			
-		</div>
-
-		<div class='playlistBtn'>
-			{{{playlistButtons}}}
-		</div>
-	</div>
-	<div class='playlistContent'> -->
-		
 	

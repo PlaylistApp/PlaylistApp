@@ -595,6 +595,10 @@ hr {
   margin-bottom: 5px;
 }
 
+.playlistBtn {
+  margin-bottom: 25px;
+}
+
 #playlistView .playlistBtn{
   display: flex;
   flex-direction: column;
@@ -694,12 +698,13 @@ hr {
   text-align: left;
   width: 40%;
   margin-left: 15px;
-  margin-right: 15px;
+  margin-right: 50px;
   line-height: 1.6;
 }
 
 .playlistDetails h2, h4 {
   line-height: 1.4;
+  margin-top: 10px;
 }
 
 .playlistDetails h2 {
@@ -708,7 +713,7 @@ hr {
 
 .plSideHeader p {
   font-size: 1em;
-  color: #00b988;
+  color: #7a7a7a;
   margin: 0px
 }
 
@@ -727,12 +732,17 @@ hr {
 #vidCard {
   display: flex;
   flex-direction: row;
-  background-color: #f4f4f4;
   border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #fafafa;
 }
 
 .vidThumb {
-  margin: 15px;
+  border: none;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .vidCardTxt {
@@ -753,6 +763,12 @@ hr {
   text-align: left;
   padding: 0px;
   width: 100%;
+}
+
+.vidCardHeader h3 {
+  width: 150%;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
 .vidCardBtn {

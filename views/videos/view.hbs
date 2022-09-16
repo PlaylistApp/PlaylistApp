@@ -2,7 +2,7 @@
 <div class="columns">
 
     <div class="videoinfo">
-        <div class="videoimg" id="ytplayer" data-videoUrl="{{video.videoUrl}}" data-username="{{user.username}}" data-userID="{{user._id}}" data-videoID="{{video._id}}">
+        <div class="videoimg" id="ytplayer" data-videoUrl="{{video.videoUrl}}" data-username="{{user.username}}" data-userID="{{user._id}}" data-videoID="{{video._id}}" data-creatorID="{{video.playlistCreator._id}}">
             {{!-- <iframe src='{{video.videoUrl}}' class='videoimg'></iframe> --}}
         </div>
         <p class="credits">Playlist: <a href="/playlists/{{video.playlistID.id}}">{{video.playlistID.title}}</a> | Created by: {{video.playlistCreator.username}} </p>
@@ -38,7 +38,7 @@
        
         <div class="tabs">
             <button type="btFilter" class="allNotes secondaryButton">All notes</button>
-            <button type="btFilter" class="myNotes primaryButton">Mine</button>
+            <button type="btFilter" class="myNotes secondaryButton">Mine</button>
             <button type="btFilter" class="creatorsNotes secondaryButton">Creator's</button>
         </div>
          <hr>

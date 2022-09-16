@@ -113,3 +113,87 @@ function addListenerToTimeStamp(){
 
 addListenerToTimeStamp()
 
+
+document.querySelector('.creatorsNotes').addEventListener('click', function () {
+  const notesDiv = document.querySelector('#notes')
+  let videoID = document.querySelector('#ytplayer').getAttribute("data-videoID")
+  let creatorID = document.querySelector('#ytplayer').getAttribute("data-creatorID")
+
+  // document.querySelector('.creatorsNotes').classList.add('primaryButton')
+  // document.querySelector('.creatorsNotes').classList.remove('secundaryButton')
+  // document.querySelector('.myNotes').classList.remove('primaryButton')
+  // document.querySelector('.myNotes').classList.add('secundaryButton')
+
+  fetch(`/notes/${creatorID}/${videoID}`,{headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  },
+    method: "GET",
+  
+})
+  .then(response => response.json())
+  .then(data => {
+    document.querySelector('#notes').innerHTML=''
+    for (let i = 0; i < data[0].notes.length; i++) {
+      const newNoteDB = document.createElement('div')
+      newNoteDB.setAttribute('class','noteCard')
+      newNoteDB.innerHTML= `
+      <div class="noteHeader">
+        <p class="timestamp">${data[0].notes[i].time}</p>
+        <div class="noteCredits">
+            <p>${data[0].notes[i].date} | by ${data[0].id}</p>
+        </div>
+
+    </div>        
+    <p class="noteText">${data[0].notes[i].note}</p>`
+    notesDiv.appendChild(newNoteDB)
+
+    }
+    addListenerToTimeStamp()
+    console.log(data)
+  })
+
+
+})
+
+document.querySelector('.myNotes').addEventListener('click', function () {
+  const notesDiv = document.querySelector('#notes')
+  let videoID = document.querySelector('#ytplayer').getAttribute("data-videoID")
+  let userID = document.querySelector('#ytplayer').getAttribute("data-userID")
+
+  // document.querySelector('.creatorsNotes').classList.add('primaryButton')
+  // document.querySelector('.creatorsNotes').classList.remove('secundaryButton')
+  // document.querySelector('.myNotes').classList.remove('primaryButton')
+  // document.querySelector('.myNotes').classList.add('secundaryButton')
+
+  fetch(`/notes/${userID}/${videoID}`,{headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  },
+    method: "GET",
+  
+})
+  .then(response => response.json())
+  .then(data => {
+    document.querySelector('#notes').innerHTML=''
+    for (let i = 0; i < data[0].notes.length; i++) {
+      const newNoteDB = document.createElement('div')
+      newNoteDB.setAttribute('class','noteCard')
+      newNoteDB.innerHTML= `
+      <div class="noteHeader">
+        <p class="timestamp">${data[0].notes[i].time}</p>
+        <div class="noteCredits">
+            <p>${data[0].notes[i].date} | by ${data[0].id}</p>
+        </div>
+
+    </div>        
+    <p class="noteText">${data[0].notes[i].note}</p>`
+    notesDiv.appendChild(newNoteDB)
+
+    }
+    addListenerToTimeStamp()
+    console.log(data)
+  })
+
+
+})

@@ -908,9 +908,8 @@ hr {
 }
 
 .videoPlaceholder {
-  background-color: rgb(219, 219, 219);
   height: 180px;
-  width: 270px;
+  width: 300px;
   align-self: center;
 }
 

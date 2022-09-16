@@ -7,7 +7,7 @@
 	{{#each playlists}}
 		<div id="playlistsCard">
 			<div class='videoPlaceholder' {{! id="ytplayer" }}>
-				{{!-- <iframe src='{{this.videos[0].videoUrl}}' class='videothumb iframeVideo'></iframe> --}}
+				<iframe src='{{this.videos.0.videoUrl}}' width="300" class=''></iframe>
 			</div>
 			<a href='/playlists/{{this._id}}' class='plInfoCard'>
 				<h2 class='vidSinfoH2'>{{this.title}}</h2>
@@ -17,9 +17,9 @@
 
 		</div>
 	{{/each}}
-
+{{!-- 
 	<form action='/auth/logout' method='GET'>
 		<button type='sumbmit'>Log Out</button>
-	</form>
+	</form> --}}
 
 </div>

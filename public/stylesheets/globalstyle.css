@@ -1,4 +1,3 @@
-
 .formHeader {
     align-self: center;
     text-align: center;
@@ -72,6 +71,8 @@
     border: 1px solid #3c70e2;
     color: #3c70e2;
     background: none;
+    font-size: 16px;
+    text-align: center;
 }
 
 .secondaryButton:hover {

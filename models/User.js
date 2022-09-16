@@ -26,13 +26,14 @@ const userSchema = new Schema(
 		  ref: 'Playlist'
     }],
     videoNotes:[{
-      type: Schema.Types.ObjectId,
+      id: String,
+      // type: Schema.Types.ObjectId,
 		  // this refers to the model the id above belongs to
-		  ref: 'Video',
+		  // ref: 'Video',
       notes:[{
         time: String,
         note:String,
-        timestamps: true
+        date: String
       }]
     }]
   },

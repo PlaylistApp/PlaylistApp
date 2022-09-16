@@ -64,6 +64,7 @@ router.get('/:playlistID', (req, res, next) => {
 	let playlistButtons = '';
 	let ownerInterface = false;
 	let userInterface = true;
+	let videosAvailable = false
 
 	Playlist.findById(playlistID)
 		.populate('playlistCreator')
@@ -187,8 +188,13 @@ router.get("/:playlistID/:videoID", (req, res, next) => {
 				path: 'videoNotes',
 				
 			  })).then((user) =>{
-				// console.log(video)
-				res.render("videos/view", { video,user });
+				let result = user.videoNotes.filter(obj=>{return obj.id===req.params.videoID})
+				// console.log(result[0].notes)
+				let notes = []
+				if (result[0]) {
+					notes= result[0].notes
+				}
+				res.render("videos/view", { video,user,notes });
 			  })
 			
 		})

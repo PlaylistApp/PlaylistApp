@@ -2,7 +2,7 @@
 <div class="columns">
 
     <div class="videoinfo">
-        <div class="videoimg" id="ytplayer" data-videoUrl="{{video.videoUrl}}">
+        <div class="videoimg" id="ytplayer" data-videoUrl="{{video.videoUrl}}" data-username="{{user.username}}" data-userID="{{user._id}}" data-videoID="{{video._id}}">
             {{!-- <iframe src='{{video.videoUrl}}' class='videoimg'></iframe> --}}
         </div>
         <p class="credits">Playlist: <a href="/playlists/{{video.playlistID.id}}">{{video.playlistID.title}}</a> | Created by: {{video.playlistCreator.username}} </p>
@@ -44,17 +44,21 @@
          <hr>
 
          <div id="notes">
-            {{!-- <div class="noteCard">
+
+            {{#each notes}}
+           <div class="noteCard"> 
                 <div class="noteHeader">
-                    <p class="timestamp">01:45</p>
+                    <p class="timestamp">{{time}}</p>
                     <div class="noteCredits">
-                        <p>06/18/2022 | by Name</p>
+                        <p>{{date}} | {{!-- by {{username}} --}}</p>
                     </div>
 
                 </div>
                 
-                <p class="noteText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </div> --}}
+                <p class="noteText">{{note}}</p>
+            </div>
+            {{/each}}
+            
          </div>
 
 

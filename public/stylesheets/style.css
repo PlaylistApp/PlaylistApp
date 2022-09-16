@@ -917,3 +917,27 @@ hr {
 .playlistsContentPage .formHeader {
   margin-bottom: 50px;
 }
+
+
+.formNote {
+  display: flex;
+  flex-direction: column;
+}
+
+.noteFormBtn{
+  text-align: center;
+}
+
+.noteInputField{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width:325px;
+  height: 90px;
+  border: 1px solid #D7D7D7;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.vidSinfoP {
+  height: 55px;
+  overflow: hidden;
+}

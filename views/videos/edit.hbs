@@ -1,18 +1,35 @@
 <div id="editVideo">
-	<h2>Edit the Video </h2>
-	<form action="/playlists/edit-video/{{video.playlistID._id}}/{{video._id}}" method="POST" class="form">
-		<label for="">Title: </label>
-		<input type="text" name="title" value="{{video.title}}">
+	<div class="formHeader">
+		<h1>Edit video information</h1>
+		<p>All fields are mandatory</p>
+	</div>
 
-		<label for="">Video URL: </label>
-		<input type="text" name="videoUrlnotEmbed" value="{{video.videoUrl}}">
+	<form class="formContainer" action="/playlists/edit-video/{{video.playlistID._id}}/{{video._id}}" method="POST" class="form">
+		<div class="formInfo">
+			<div>
+				<label class="inputTitle" for="">Title</label>
+				<input class="inputField" type="text" name="title" value="{{video.title}}">
+			</div>
 
-		<label for="">Name of the Author: </label>
-		<input type="text" name="videoAuthor" value="{{video.videoAuthor}}">
+			<div>
+				<label class="inputTitle" for="">Video URL</label>
+				<input class="inputField" type="text" name="videoUrlnotEmbed" value="{{video.videoUrl}}">
+			</div>
 
-		<label for="">Description: </label>
-		<textarea type="text" name="description" rows="4">{{video.description}}</textarea>
+			<div>
+				<label class="inputTitle" for="">Author</label>
+				<input class="inputField" type="text" name="videoAuthor" value="{{video.videoAuthor}}">
+			</div>
+
+			<div>
+				<label class="inputTitle" for="">Description</label>
+				<textarea class="inputField two" type="text" name="description" rows="4">{{video.description}}</textarea>
+			</div>
+		</div>
 		
-		<button type="sumbmit">Edit the Video</button>
+		<div class="actionButtons">
+			<button class="secondaryButton" type="sumbmit">Cancel</button>
+			<button class="primaryButton" type="sumbmit">Save</button>
+		</div>	
 	</form>
 </div>

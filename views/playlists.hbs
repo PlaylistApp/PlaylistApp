@@ -1,21 +1,25 @@
-<h1>I'm the Playlist page</h1>
-
-<a href='/playlists/create-playlist'>Create a New Playlist</a>
-
-{{#each playlists}}
-	<div class='vidScard' id="playlistsCard">
-		<div class='videothumb' {{! id="ytplayer" }}>
-			{{!-- <iframe src='{{this.videos[0].videoUrl}}' class='videothumb iframeVideo'></iframe> --}}
-		</div>
-		<a href='/playlists/{{this._id}}' class='vidSinfo'>
-			<h2 class='vidSinfoH2'>{{this.title}}</h2>
-			<p class='playlistsSinfoP'>{{this.description}}</p>
-			<p>by {{this.playlistCreator.username}}</p>
-		</a>
-
+<div class="playlistsContentPage">
+	<div class="formHeader">
+		<h1>Check the latest playlists</h1>
+		<a href="/playlists/create-playlist" class="button primaryButton"> + Create Playlist</a>
 	</div>
-{{/each}}
 
-<form action='/auth/logout' method='GET'>
-	<button type='sumbmit'>Log Out</button>
-</form>
+	{{#each playlists}}
+		<div id="playlistsCard">
+			<div class='videoPlaceholder' {{! id="ytplayer" }}>
+				{{!-- <iframe src='{{this.videos[0].videoUrl}}' class='videothumb iframeVideo'></iframe> --}}
+			</div>
+			<a href='/playlists/{{this._id}}' class='plInfoCard'>
+				<h2 class='vidSinfoH2'>{{this.title}}</h2>
+				<p>by {{this.playlistCreator.username}}</p>
+				<p class='playlistsSinfoP'>{{this.description}}</p>
+			</a>
+
+		</div>
+	{{/each}}
+
+	<form action='/auth/logout' method='GET'>
+		<button type='sumbmit'>Log Out</button>
+	</form>
+
+</div>

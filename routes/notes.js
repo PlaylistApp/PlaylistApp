@@ -29,6 +29,8 @@ router.post('/:userID/:videoID', (req, res, next) => {
                 User.findById(req.params.userID).populate('videoNotes')
                 .then((user) =>{
                     let result = user.videoNotes.filter(obj=>{return obj.id===req.params.videoID})
+                    result[0].id = user.username
+                    console.log(result[0].id);
                     res.send(result)
                     }).catch((err) => next(err));
 

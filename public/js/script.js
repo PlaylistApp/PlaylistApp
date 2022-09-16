@@ -5,8 +5,9 @@ document.addEventListener(
   },
   false
 );
+
 var videoUrlnotReady = document.querySelector('#ytplayer').getAttribute("data-videoUrl")
-  var videoUrl = videoUrlnotReady.slice(videoUrlnotReady.indexOf('embed/')+6)
+var videoUrl = videoUrlnotReady.slice(videoUrlnotReady.indexOf('embed/')+6)
 
 
 var tag = document.createElement('script');
@@ -28,9 +29,9 @@ document.querySelector('#addNote').addEventListener('click', function () {
   let currentTimeHours = Math.floor(currentVideoTimeSec / 60 / 60)
   let currentTimeMins = Math.floor((currentVideoTimeSec%3600)/60)
   let currentTimeSecs = Math.floor(currentVideoTimeSec%3600)%60
-  let noteCreator = document.querySelector('#ytplayer').getAttribute("data-username")
-  let userID = document.querySelector('#ytplayer').getAttribute("data-userID")
-  let videoID = document.querySelector('#ytplayer').getAttribute("data-videoID")
+    let noteCreator = document.querySelector('#ytplayer').getAttribute("data-username")
+    let userID = document.querySelector('#ytplayer').getAttribute("data-userID")
+    let videoID = document.querySelector('#ytplayer').getAttribute("data-videoID")
   let toDateLarge = new Date();
   let toDate = toDateLarge.toLocaleDateString();
 
@@ -51,7 +52,7 @@ document.querySelector('#addNote').addEventListener('click', function () {
           </div>
           <textarea id="textAreaNote" class="noteInputField" type="text" name="Note" rows="6" cols="43"></textarea>
       </div>
-		<span id="safeNote" class="noteFormBtn primaryButton">Safe Note</span>`;
+		<span id="safeNote" class="noteFormBtn primaryButton">Save Note</span>`;
 
     if(notesDiv.innerHTML === ''){
       notesDiv.appendChild(newNote)
@@ -82,16 +83,14 @@ document.querySelector('#addNote').addEventListener('click', function () {
         <div class="noteHeader">
           <p class="timestamp">${data[0].notes[i].time}</p>
           <div class="noteCredits">
-              <p>${data[0].notes[i].date} |</p>
+              <p>${data[0].notes[i].date} | by ${data[0].id}</p>
           </div>
 
-      </div>
-                
+      </div>        
       <p class="noteText">${data[0].notes[i].note}</p>`
       notesDiv.appendChild(newNoteDB)
 
       }
-
 			console.log(data)
 		})
   })
@@ -104,7 +103,7 @@ function addListenerToTimeStamp(){
     timeStamps[i].addEventListener('click',() =>{
       let time = timeStamps[i].innerText
       let arrTime = time.split(":")
-      let realTime = (+arrTime[0]*3600)+(+arrTime[1]*60)+arrTime[2]
+      let realTime = (+arrTime[0]*3600)+(+arrTime[1]*60)+(+arrTime[2])
       player.seekTo(realTime)
 
     })

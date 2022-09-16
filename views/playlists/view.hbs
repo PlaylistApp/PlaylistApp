@@ -40,6 +40,29 @@
 				</div> 
 					
 			{{/each}}
+		{{/if}}	
+		{{#if userInterface}}
+			{{#each playlist.videos}}
+				<div id="vidCard">
+					<a href='/playlists/{{playlistID}}/{{_id}}'>
+							<iframe src='{{videoUrl}}' class='vidThumb'></iframe>
+					</a>					
+
+					<div class="vidCardTxt">
+						<div class="content">
+							<div class="vidCardHeader">
+								<a href='/playlists/{{playlistID}}/{{_id}}' class='vidSinfoOwner'>
+									<h3>{{title}}</h3>
+									<h4>by {{videoAuthor}}</h4>
+										
+								</a>	
+							</div>	
+							
+						</div>	
+					</div>
+				</div> 
+					
+			{{/each}}
 		{{/if}}			
 						
 	

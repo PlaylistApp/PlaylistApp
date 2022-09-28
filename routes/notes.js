@@ -4,13 +4,14 @@ const User = require('../models/User');
 
 /* GET home page */
 router.post('/:userID/:videoID', (req, res, next) => {
-    const {time,note,date} = req.body
+    const {time,note,date,user} = req.body
     let newNote = {
         id:req.params.videoID,
         notes:[{
            time: time,
            note:note,
-           date:date
+           date:date,
+           user:user
            }]
        }
     
@@ -30,7 +31,6 @@ router.post('/:userID/:videoID', (req, res, next) => {
                 .then((user) =>{
                     let result = user.videoNotes.filter(obj=>{return obj.id===req.params.videoID})
                     result[0].id = user.username
-                    console.log(result[0].id);
                     res.send(result)
                     }).catch((err) => next(err));
 
@@ -42,6 +42,7 @@ router.post('/:userID/:videoID', (req, res, next) => {
                 User.findById(req.params.userID).populate('videoNotes')
                 .then((user) =>{
                     let result = user.videoNotes.filter(obj=>{return obj.id===req.params.videoID})
+                    result[0].id = user.username
                     res.send(result)
                     }).catch((err) => next(err));
             }).catch((err) => next(err))}
@@ -51,7 +52,6 @@ router.post('/:userID/:videoID', (req, res, next) => {
 });
 
 router.get('/:userID/:videoID', (req, res, next) => {
-    
     User.findById(req.params.userID).populate('videoNotes').then((user) =>{
         let videoSought = false
         for (let i = 0; i < user.videoNotes.length; i++) {
@@ -66,20 +66,13 @@ router.get('/:userID/:videoID', (req, res, next) => {
                 .then((user) =>{
                     let result = user.videoNotes.filter(obj=>{return obj.id===req.params.videoID})
                     result[0].id = user.username
-                    console.log(result[0].id);
                     res.send(result)
                     }).catch((err) => next(err));
 
             }).catch((err) => next(err));
         }else{
-            User.findById(req.params.userID).populate('videoNotes')
-            .then(() =>{
-                User.findById(req.params.userID).populate('videoNotes')
-                .then((user) =>{
-                    let result = user.videoNotes.filter(obj=>{return obj.id===req.params.videoID})
-                    res.send(result)
-                    }).catch((err) => next(err));
-            }).catch((err) => next(err))}
+            res.send([])
+        }
         
       }).catch((err) => next(err));
     

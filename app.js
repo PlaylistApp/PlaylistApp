@@ -96,38 +96,38 @@ app.use(passport.session());
 
 // google strategy
 
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-passport.use(
-	new GoogleStrategy(
-		{
-			clientID: process.env.GOOGLE_ID,
-			clientSecret: process.env.GOOGLE_SECRET,
-			callbackURL: 'http://localhost:3000/auth/google/callback',
-		},
-		(accessToken, refreshToken, profile, done) => {
-			console.log(profile);
-			User.findOne({
-				googleId: profile.id,
-			}).then((user) => {
-				if (user !== null) {
-					// pass the user to passport to serialize it
-					done(null, user);
-				} else {
-					// we don't have this user in the db so we create it
-					User.create({
-						googleId: profile.id,
-						username: profile.displayName,
-						googleAvatarUrl: profile._json.picture,
-						email: profile._json.email || '',
-					}).then((user) => {
-						done(null, user);
-					});
-				}
-			});
-		}
-	)
-);
+// passport.use(
+// 	new GoogleStrategy(
+// 		{
+// 			clientID: process.env.GOOGLE_ID,
+// 			clientSecret: process.env.GOOGLE_SECRET,
+// 			callbackURL: 'http://localhost:3000/auth/google/callback',
+// 		},
+// 		(accessToken, refreshToken, profile, done) => {
+// 			console.log(profile);
+// 			User.findOne({
+// 				googleId: profile.id,
+// 			}).then((user) => {
+// 				if (user !== null) {
+// 					// pass the user to passport to serialize it
+// 					done(null, user);
+// 				} else {
+// 					// we don't have this user in the db so we create it
+// 					User.create({
+// 						googleId: profile.id,
+// 						username: profile.displayName,
+// 						googleAvatarUrl: profile._json.picture,
+// 						email: profile._json.email || '',
+// 					}).then((user) => {
+// 						done(null, user);
+// 					});
+// 				}
+// 			});
+// 		}
+// 	)
+// );
 
 // end of google strategy
 

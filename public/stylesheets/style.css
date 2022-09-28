@@ -234,9 +234,8 @@ h1 {
   background-color:#DCDBDB;
   width: 340px;
   height: 1000px;
-  padding-top: 15px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 15px 15px 50px;
+  height: fit-content;
 }
 
 .addNote {
@@ -365,6 +364,7 @@ hr {
 
 #profileView img {
 	width: 100px;
+  height: 100px;
 	border: 1px outset;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -394,6 +394,7 @@ hr {
 
 #profileEdit img {
 	width: 100px;
+  height: 100px;
 	border: 1px outset;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -925,6 +926,12 @@ hr {
 
 .noteFormBtn{
   text-align: center;
+  width: 50%;
+  margin: 5px;
+}
+.noteCardBtns{
+  display: flex;
+  justify-content: space-between;
 }
 
 .noteInputField{
@@ -939,4 +946,9 @@ hr {
 .vidSinfoP {
   height: 55px;
   overflow: hidden;
+}
+
+.ctaBtns {
+  display: flex;
+  align-items: center;
 }

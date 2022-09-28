@@ -16,8 +16,16 @@
    <nav>
          <img src="/images/pwr_logo_logo_nav.png" id="logo">
          <ul id="header">
-            <li><a href="/auth/signin">Create Account</a></li>
-            <li><a href="/auth/login">Log in</a></li>
+            <li><a href="/playlists">Playlists</a></li>
+            {{#if userIsNotLogged}}
+               <li><a href="/auth/signin">Create Account</a></li>
+               <li><a href="/auth/login">Log in</a></li>
+            {{/if}}
+            {{#if userIsLogged}}
+               <li><a href="/profile">Profile</a></li>
+               <li><a href="/auth/logout">Log Out</a></li>
+            {{/if}}
+            
          </ul>
       </div>   
    </nav>

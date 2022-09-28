@@ -5,7 +5,6 @@ const userSchema = new Schema(
   {
     username: {
       type: String, /* -> Ideally, should be unique, but its up to you */
-      require:true
     },
     avatarUrl: String,
     googleId: String,
@@ -31,6 +30,7 @@ const userSchema = new Schema(
 		  // this refers to the model the id above belongs to
 		  // ref: 'Video',
       notes:[{
+        user: String,
         time: String,
         note:String,
         date: String

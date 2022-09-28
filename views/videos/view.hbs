@@ -1,74 +1,98 @@
+<div class='columns'>
 
-<div class="columns">
+	<div class='videoinfo'>
+		<div
+			class='videoimg'
+			id='ytplayer'
+			data-videoUrl='{{video.videoUrl}}'
+			data-username='{{user.username}}'
+			data-userID='{{user._id}}'
+			data-videoID='{{video._id}}'
+			data-creatorID='{{video.playlistCreator._id}}'
+		>
+			{{!-- <iframe src='{{video.videoUrl}}' class='videoimg'></iframe> --}}
+		</div>
+		<p class='credits'>Playlist:
+			<a
+				href='/playlists/{{video.playlistID.id}}'
+			>{{video.playlistID.title}}</a>
+			| Created by:
+			{{video.playlistCreator.username}}
+		</p>
+		<h1>{{video.title}}</h1>
+		<p>Author: {{video.videoAuthor}}</p>
+		<p class='videodescription'>{{video.description}}</p>
 
-    <div class="videoinfo">
-        <div class="videoimg" id="ytplayer" data-videoUrl="{{video.videoUrl}}" data-username="{{user.username}}" data-userID="{{user._id}}" data-videoID="{{video._id}}" data-creatorID="{{video.playlistCreator._id}}">
-            {{!-- <iframe src='{{video.videoUrl}}' class='videoimg'></iframe> --}}
-        </div>
-        <p class="credits">Playlist: <a href="/playlists/{{video.playlistID.id}}">{{video.playlistID.title}}</a> | Created by: {{video.playlistCreator.username}} </p>
-        <h1>{{video.title}}</h1>
-        <p>Author: {{video.videoAuthor}}</p>
-        <p class="videodescription">{{video.description}}</p>
+		<div class='othervideos'>
+			<h2>More from the same playlist</h2>
+			<p>by {{video.playlistCreator.username}}</p>
 
-        <div class="othervideos">
-            <h2>More from the same playlist</h2>
-            <p>by {{video.playlistCreator.username}}</p>
+			{{#each video.playlistID.videos}}
+				<div class='vidScard'>
+					<div class='videothumb' {{! id="ytplayer" }}>
+						<iframe
+							src='{{this.videoUrl}}'
+							class='videothumb iframeVideo'
+						></iframe>
+					</div>
+					<div class='vidSinfo'>
+						<h2 class='vidSinfoH2'>{{this.title}}</h2>
+						<p class='vidSinfoP'>{{this.description}}</p>
+						{{! <p class="duration">15:23</p> }}
+						<p>by {{this.videoAuthor}}</p>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
 
-            {{#each video.playlistID.videos}}
-                <div class="vidScard">
-                    <div class="videothumb" {{!-- id="ytplayer" --}}>
-                        <iframe src='{{this.videoUrl}}' class='videothumb iframeVideo'></iframe>
-                    </div>
-                    <div class="vidSinfo ">
-                        <h2 class="vidSinfoH2">{{this.title}}</h2>
-                        <p class="vidSinfoP">{{this.description}}</p>
-                        {{!-- <p class="duration">15:23</p> --}}
-                        <p>by {{this.videoAuthor}}</p>
-                    </div>
-                </div>
-            {{/each}}
-        </div>
-    </div>
+	<section class='notes'>
+		<div class='notesHeader'>
+			<h2> Notes</h2>
+			{{#if userID}}
+			<img src='/images/add_note.png' id='addNote' />
+			{{/if}}
+			
+		</div>
 
-    <section class="notes">
-        <div class="notesHeader">
-            <h2> Notes</h2>
-            <img src="/images/add_note.png" id="addNote">
-        </div>
-       
-        <div class="tabs">
-            <button type="btFilter" class="allNotes secondaryButton">All notes</button>
-            <button type="btFilter" class="myNotes secondaryButton">Mine</button>
-            <button type="btFilter" class="creatorsNotes secondaryButton">Creator's</button>
-        </div>
-         <hr>
+		<div class='tabs'>
+			<button type='btFilter' id='allNotes' class='allNotes primaryButton'>All notes</button>
+			{{#if userID}}
 
-         <div id="notes">
+				<button type='btFilter' id='myNotes' class='myNotes secondaryButton'>Mine</button>
+				<button
+					type='btFilter' id='creatorsNotes' 
+					class='creatorsNotes secondaryButton'
+				>Creator's</button>
+			{{/if}}
 
-            {{#each notes}}
-           <div class="noteCard"> 
-                <div class="noteHeader">
-                    <p class="timestamp">{{time}}</p>
-                    <div class="noteCredits">
-                        <p>{{date}} | {{!-- by {{username}} --}}</p>
-                    </div>
+		</div>
+		<hr />
 
-                </div>
-                
-                <p class="noteText">{{note}}</p>
-            </div>
-            {{/each}}
-            
-         </div>
+		<div id='notes'>
 
+			{{#each notes}}
+				<div class='noteCard'>
+					<div class='noteHeader'>
+						<p class='timestamp'>{{time}}</p>
+						<div class='noteCredits'>
+							<p>{{date}} | {{!-- by {{username}} --}}</p>
+						</div>
 
-         
-        {{!-- {{#each }}
+					</div>
+
+					<p class='noteText'>{{note}}</p>
+				</div>
+			{{/each}}
+
+		</div>
+
+		{{!-- {{#each }}
         {{/each}} --}}
-        {{!-- {{> note}} --}}
-    </section>
+		{{!-- {{> note}} --}}
+	</section>
 </div>
 
 <script>
-   
+
 </script>

@@ -98,8 +98,8 @@ router.post('/login', (req, res, next) => {
 		userIsLogged = true
 		userIsNotLogged = false
 	} 
-	const { username, password } = req.body;
-	User.findOne({ username: username }).then((userFromDB) => {
+	const { email, password } = req.body;
+	User.findOne({ email: email }).then((userFromDB) => {
 		if (userFromDB === null) {
 			// username is not correct -> show the login form again
 			res.render('auth/login', { message: 'Oops! Wrong credentials', userIsLogged, userIsNotLogged});
